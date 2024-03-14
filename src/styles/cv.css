@@ -1,0 +1,105 @@
+/*! Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Dancing+Script&family=Honk&family=Overpass:wght@100..900&family=Protest+Guerrilla&family=Teko:wght@300..700&display=swap&family=Lobster');
+
+
+.cvTemplate {
+    width: 100%;
+    /* border: 1px solid black; */
+    height: 100%;
+    display: grid;
+    /* gap: 0.1rem; */
+    grid: repeat(5, 1fr)/2fr 1fr;
+    /* background-color: rgb(80, 114, 123); */
+    font-family: "Dancing Script", cursive;
+    ;
+}
+
+.cvInfo {
+    grid-area: 1/1/2/2;
+    background-color: rgb(66, 125, 157);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    /* border: 10px solid; */
+
+
+}
+
+.cvInfo>p {
+    margin-left: 1rem;
+    margin-top: 0.1rem;
+}
+
+.cvInfo>:nth-child(1) {
+    font-size: 1.8rem;
+    font-weight: 800;
+
+}
+
+.profilePhoto {
+    grid-area: 1/2/2/3;
+    background-color: rgb(66, 125, 157);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.profilePhoto>div {
+    font-size: 8rem;
+    color: black;
+
+}
+
+.cvInfo>h2,
+.cvEducation>h2,
+.cvWork>h2 {
+    /* text-align: center; */
+    font-size: 2rem;
+    text-decoration: underline;
+    margin: 0.4rem;
+}
+
+.cvEducation {
+    grid-area: 2/1/4/2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    list-style-type: circle;
+    list-style-position: inside;
+    padding-left: 0.5rem;
+}
+
+.cvEducation>li,.cvWork>li {
+    margin-left: 0.2rem;
+    padding-left: 0rem;
+    margin-top: 0.1rem;
+
+}
+
+.cvEducation>li::before,.cvWork>li::before {
+
+    content: '';
+    margin-left: -18px;
+
+
+}
+
+.cvWork {
+    grid-area: 4/1/6/2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    list-style-type: circle;
+    list-style-position: inside;
+    padding-left: 0.5rem;
+}
