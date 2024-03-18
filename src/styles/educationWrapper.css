@@ -1,0 +1,26 @@
+/*! Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Dancing+Script&family=Honk&family=Overpass:wght@100..900&family=Protest+Guerrilla&family=Teko:wght@300..700&display=swap&family=Lobster');
+
+
+
+.wrapper{
+    /* border: 1px solid; */
+    margin: 0rem auto;
+}
+.wrapper>h3 {
+    text-decoration: underline;
+    font-family: "Lobster", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+}
+#wrapperBtn>FontAwesomeIcon{
+    margin-left : 8.5rem;
+    font-size: 2rem;
+    border: none;
+    color: red;
+    animation : none;
+}
+#wrapper>button:hover {
+cursor: pointer;
+}

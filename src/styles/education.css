@@ -9,15 +9,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
+    /* border: 1px solid; */
     gap: 0.4rem;
     /* border: 1px solid; */
 }
-.education>label{
+
+.education>label {
     /* border: 1px solid; */
-    width: 90%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
 }
@@ -26,17 +28,96 @@
     margin: 0.3rem;
     padding: 0.2rem;
     border-radius: 0.1rem;
-    font-family:   "Overpass", sans-serif; 
+    font-family: "Overpass", sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
 }
 
 .education>button {
     margin: 0.6rem auto;
+    color: red;
 }
+
 .education>h3 {
     text-decoration: underline;
     font-family: "Lobster", sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
+}
+
+#deletebtn {
+    padding: 0.3rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    color: white;
+    font-style: italic;
+    font-family: "Protest Guerrilla", sans-serif;
+    border-radius: 30%;
+    border: none;
+    background: linear-gradient(90deg, rgb(191, 49, 49), rgb(125, 10, 10));
+    transition: transform 0.2s ease-out;
+    animation : none;
+}
+
+#deletebtn:hover {
+    transform: scale(1.2);
+    box-shadow: 2px 2px 20px rgb(125, 10, 10);
+    cursor: pointer;
+}
+
+#deletebtn:active {
+    background: rgb(216, 0, 50);
+    transform: scale(1);
+
+}
+
+
+.education>button {
+    width: 4rem;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    animation: 1s upDown infinite alternate;
+   
+}
+
+.education>button:hover {
+    cursor: pointer;
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+
+}
+
+#wrapperBtn{
+    /* width: 2rem;
+    height: 2rem; */
+    padding: 0.3rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    animation: none;
+    color: white;
+    font-style: italic;
+    font-family: "Protest Guerrilla", sans-serif;
+    border-radius: 30%;
+    border: none;
+    background: linear-gradient(90deg,rgb(154, 222, 123),rgb(80, 141, 105));
+    transition: transform 0.2s ease-out;
+}
+#wrapperBtn:hover{
+transform: scale(1.2);
+box-shadow: 2px 2px 20px rgb(80, 141, 105);
+cursor: pointer;
+}
+#wrapperBtn:active{
+    background: rgb(130, 205, 71);
+    transform: scale(1);
+
 }

@@ -27,10 +27,13 @@
     font-size: 1.2rem;
     border-right: 2px solid;
 }
+
 .cvDisplay {
     width: 70%;
     /* border: 1px solid black; */
     /* height: 100vh; */
+    /* background-color: red; */
+    background: linear-gradient(90deg,firebrick,rgb(191, 49, 49))
   
 }
 .btns{

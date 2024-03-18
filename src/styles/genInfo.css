@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Dancing+Script&family=Honk&family=Overpass:wght@100..900&family=Protest+Guerrilla&family=Teko:wght@300..700&display=swap&family=Lobster');
 
 
-.genInfo{
+.genInfo {
     width: 90%;
     margin: 0.3rem auto;
     display: flex;
@@ -12,7 +12,8 @@
     gap: 0.4rem;
     /* border: 1px solid; */
 }
-.genInfo>label{
+
+.genInfo>label {
     /* border: 1px solid; */
     width: 90%;
     display: flex;
@@ -21,11 +22,11 @@
 
 }
 
-.genInfo>label>input{
+.genInfo>label>input {
     margin: 0.3rem;
     padding: 0.2rem;
     border-radius: 0.1rem;
-    font-family:   "Overpass", sans-serif; 
+    font-family: "Overpass", sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
 
@@ -34,10 +35,34 @@
 .genInfo>button {
     margin: 0.6rem auto;
 }
+
 .genInfo>h3 {
 
     text-decoration: underline;
     font-family: "Lobster", sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
+}
+
+.genInfo>button {
+    width: 4rem;
+    border: none;
+    font-size: 1.5rem;
+    animation: 1s upDown infinite alternate;
+   
+}
+
+.genInfo>button:hover {
+    cursor: pointer;
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+
 }

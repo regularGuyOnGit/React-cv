@@ -1,94 +1,135 @@
-import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash , faSave } from '@fortawesome/fontawesome-free-solid'
 import './App.css'
 import GeneralInfo from './components/GenealInfo'
 import Educational from './components/Educational'
 import Practical from './components/Practical'
-import Cv from'./components/Cv'
+import CvComponent from './components/CvComponent'
+import { useState } from 'react'
+
 
 function App() {
 
+  // ! Gen Info Components state and logic
+  const [genInfo, setGenInfo] = useState({ name: 'Nitin Rai', email: 'nitinRai3000@lonki.com', phoneNo: '91-9654808931' })
 
-const [genInfo,setGenInfo] = useState({name : 'Nitin Rai', email : 'nitinRai3000@lonki.com', phoneNo : '91-9654808931' })
-const[education,setEducation] = useState({schoolName : 'Ganesh Shankar',title : '12th', doc : 2016})
-const[experience,setExperience] = useState({companyName : 'MicroSoft',position :'SDE', yoe : 1,ric : "Nothing" })
-const [btn,setBtn] = useState (false)
+  const nameChange = (e) => {
 
-const nameChange = (e)=>{
+    setGenInfo({ ...genInfo, name: (e.target.value) })
+  }
+  const emailChange = (e) => {
 
-  setGenInfo({...genInfo,name : (e.target.value)})
-}
-const emailChange = (e)=>{
+    setGenInfo({ ...genInfo, email: (e.target.value) })
+  }
+  const phoneNoChange = (e) => {
 
-  setGenInfo({...genInfo,email : (e.target.value)})
-}
-const phoneNoChange = (e)=>{
+    setGenInfo({ ...genInfo, phoneNo: (e.target.value) })
+  }
 
-  setGenInfo({...genInfo,phoneNo : (e.target.value)})
-}
-const schoolNameChange = (e)=>{
+    // ! Education Info Components state and logic
+    const proLoadedEducationData = [{schoolName : 'Ganesh Shankar',title : '12th', doc : 2016 }]
 
-  setEducation({...education,schoolName : (e.target.value)})
-}
-const titleChange = (e)=>{
+    const [education,setEducation] = useState(proLoadedEducationData);
 
-  setEducation({...education,title : (e.target.value)})
-}
-const docChange = (e)=>{
+    
+    const schlNameChange = (e,objectsIndex)=>{
+      setEducation([...education.map((eduItems,index)=>{
+        if(objectsIndex == index){
+         eduItems.schoolName = e.target.value
+        }
+        return eduItems
+      })])
+    }
+    const titleNameChange = (e,objectsIndex)=>{
+      setEducation([...education.map((eduItems,index)=>{
+        if(objectsIndex == index){
+         eduItems.title = e.target.value
+        }
+        return eduItems
+      })])
+    }
+    const docChange = (e,objectsIndex)=>{
+      setEducation([...education.map((eduItems,index)=>{
+        if(objectsIndex == index){
+         eduItems.doc = e.target.value
+        }
+        return eduItems
+      })])
+    }
+    const educationAddition = (newEducationObj)=>{
+      setEducation([...education,newEducationObj])
+    }
+    const deleteInputField = (e,objectIndex)=>{
+      e.preventDefault()
+      setEducation([...education.filter((items,index)=>{
+    if(index !=objectIndex){
+      return items
+    } 
+    
+      })])
+    
+    }
 
-  setEducation({...education,doc : (e.target.value)})
-}
-const companyNameChange = (e)=>{
-
-  setExperience({...experience,companyName : (e.target.value)})
-}
-const positionChange = (e)=>{
-
-  setExperience({...experience,position : (e.target.value)})
-}
-const yoeChange = (e)=>{
-
-  setExperience({...experience,yoe : (e.target.value)})
-}
-const ricChange = (e)=>{
-
-  setExperience({...experience,ric : (e.target.value)})
-}
-
-
-const submitBtn  = (e)=>{
-setBtn(true);
-
-
-
-}
-const resetBtn = (e)=>{
-  setBtn(false)
-  setGenInfo({name : '', email : '', phoneNo : '' })
-setEducation({schoolName : '',title : '', doc : ""})
-setExperience({companyName : '',position :'', yoe : "",ric : "" })
-}
-
-
-
+    // !Practicals states
+    const preLoadedPractical = [{ companyName: 'MicroSoft', position: 'SDE', yoe: 1, ric: "Nothing" }]
+    const [practical, setPractical] = useState(preLoadedPractical);
+  
+    const companyNameChange = (e, objectsIndex) => {
+      setPractical([...practical.map((pracItems, index) => {
+        if (objectsIndex == index) {
+          pracItems.companyName = e.target.value
+        }
+        return pracItems
+      })])
+    }
+    const positionNameChange = (e, objectsIndex) => {
+      setPractical([...practical.map((pracItems, index) => {
+        if (objectsIndex == index) {
+          pracItems.position = e.target.value
+        }
+        return pracItems
+      })])
+    }
+    const yoeChange = (e, objectsIndex) => {
+      setPractical([...practical.map((pracItems, index) => {
+        if (objectsIndex == index) {
+          pracItems.yoe = e.target.value
+        }
+        return pracItems
+      })])
+    }
+    const ricChange = (e, objectsIndex) => {
+      setPractical([...practical.map((pracItems, index) => {
+        if (objectsIndex == index) {
+          pracItems.ric = e.target.value
+        }
+        return pracItems
+      })])
+    }
+    const practicalAddition = (newPracticalObj) => {
+      setPractical([...practical, newPracticalObj])
+    }
+    const praDeleteInputField = (e, objectIndex) => {
+      e.preventDefault()
+      setPractical([...practical.filter((items, index) => {
+        if (index != objectIndex) {
+          return items
+        }
+  
+      })])
+  
+    }
+  
 
   return (
     <>
-    <div className="userInput">
-      <GeneralInfo  info = {genInfo} nameChange = {nameChange} emailChange = {emailChange}  phoneNoChange= {phoneNoChange}   />
-      <Educational   info= {education} schlNameChange = {schoolNameChange} docChange = {docChange} titleChange= {titleChange}  />
-      <Practical   info= {experience} companyNameChange = {companyNameChange} positionChange = {positionChange} yoeChange= {yoeChange} ricChange = {ricChange} />
-      <div className = "btns">
-      <button  onClick = {submitBtn}><FontAwesomeIcon icon={faSave}/></button>
-      <button  onClick = {resetBtn}><FontAwesomeIcon icon={faTrash}/></button>
+      <div className="userInput">
+        <GeneralInfo genInfo={genInfo} nameChange={nameChange} emailChange={emailChange} phoneNoChange={phoneNoChange} />
+        <Educational education = {education} deleteInputField={deleteInputField} educationAddition= {educationAddition} docChange= {docChange} schlNameChange ={schlNameChange} titleNameChange= {titleNameChange} />
+        <Practical practical={practical} deleteInputField={praDeleteInputField} practicalAddition={practicalAddition}  ricChange={ricChange} yoeChange={yoeChange} positionNameChange={positionNameChange} companyNameChange={companyNameChange}/>
       </div>
-    </div>
+      <div className="cvDisplay">
+    <CvComponent genInfo={genInfo} educationInfo={education} practicalInfo={practical}/>
 
-
-    <div className="cvDisplay" >
-         {btn && <Cv  info = {genInfo} education = {education}  experience={experience} />}
-    </div>
+      </div>
     </>
   )
 }

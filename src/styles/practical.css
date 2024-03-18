@@ -44,3 +44,81 @@
     /* color: red; */
     justify-content: space-between;
 }
+
+
+#wrapperBtn{
+    /* width: 2rem;
+    height: 2rem; */
+    padding: 0.3rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    animation: none;
+    color: white;
+    font-style: italic;
+    font-family: "Protest Guerrilla", sans-serif;
+    border-radius: 30%;
+    border: none;
+    background: linear-gradient(90deg,rgb(154, 222, 123),rgb(80, 141, 105));
+    transition: transform 0.2s ease-out;
+}
+#wrapperBtn:hover{
+transform: scale(1.2);
+box-shadow: 2px 2px 20px rgb(80, 141, 105);
+cursor: pointer;
+}
+#wrapperBtn:active{
+    background: rgb(130, 205, 71);
+    transform: scale(1);
+
+}
+
+#deletebtn {
+    padding: 0.3rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    color: white;
+    font-style: italic;
+    font-family: "Protest Guerrilla", sans-serif;
+    border-radius: 30%;
+    border: none;
+    background: linear-gradient(90deg, rgb(191, 49, 49), rgb(125, 10, 10));
+    transition: transform 0.2s ease-out;
+    animation : none;
+}
+
+#deletebtn:hover {
+    transform: scale(1.2);
+    box-shadow: 2px 2px 20px rgb(125, 10, 10);
+    cursor: pointer;
+}
+
+#deletebtn:active {
+    background: rgb(216, 0, 50);
+    transform: scale(1);
+
+}
+
+
+.practical>button {
+    width: 4rem;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    animation: 1s upDown infinite alternate;
+   
+}
+
+.practical>button:hover {
+    cursor: pointer;
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+
+}
